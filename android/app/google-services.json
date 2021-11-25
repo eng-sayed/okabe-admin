@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "980071331738",
+    "project_id": "okape-98029",
+    "storage_bucket": "okape-98029.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:980071331738:android:95b6180dc5784474f32c23",
+        "android_client_info": {
+          "package_name": "com.example.okpeadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "980071331738-mgqkpidbetjsjjob0948ni8360ei1cf5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgnfnjZEzT_m0zAgRtoyG_e3QVcVgo5ts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "980071331738-mgqkpidbetjsjjob0948ni8360ei1cf5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:980071331738:android:62ea8d8cf1db892df32c23",
+        "android_client_info": {
+          "package_name": "com.okape.okape"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "980071331738-mgqkpidbetjsjjob0948ni8360ei1cf5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgnfnjZEzT_m0zAgRtoyG_e3QVcVgo5ts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "980071331738-mgqkpidbetjsjjob0948ni8360ei1cf5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
