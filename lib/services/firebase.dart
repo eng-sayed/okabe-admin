@@ -58,7 +58,7 @@ sendMessege(types.User user, String msg, String to) {
               text: msg,
               createdAt: DateTime.now().millisecondsSinceEpoch)
           .toJson())
-      .then((value) => Diohelp.postMessegeNotficarion(msg, "admin", to));
+      .then((value) => Diohelp.postMessegeNotficarion(msg, "الحاج عقبي", to));
   /*  firestore.collection("users").doc(token).collection("messeges").add(
       types.TextMessage(
               author: user,

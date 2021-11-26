@@ -40,7 +40,7 @@ class Diohelp {
     };
     return mydio.post("", data: {
       "to": "/topics/users",
-      "notification": {"body": "$messege", "title": "admin"},
+      "notification": {"body": "$messege", "title": "الحاج عقبي"},
       "data": {
         "click_action": "FLUTTER_NOTIFICATION_CLICK",
         "sound": "default",

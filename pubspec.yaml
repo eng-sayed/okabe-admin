@@ -36,12 +36,14 @@ dependencies:
   cupertino_icons: ^1.0.2
   connectivity: ^3.0.3
   flutter_webview_plugin: ^0.4.0
-  flutter_chat_ui: ^1.5.2
+  flutter_chat_ui: ^1.4.2
   firebase_core: ^1.10.0
   firebase_messaging: ^11.1.0
   cloud_firestore: ^3.1.0
   dio: ^4.0.4
   intl: ^0.17.0
+  flutter_inappwebview:
+
 
 dev_dependencies:
   flutter_test:

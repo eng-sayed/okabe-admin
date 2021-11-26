@@ -54,7 +54,7 @@ class _SendNotificationState extends State<SendNotification> {
                   controller: controller,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      label: Text("Enter Your Notification To Send")),
+                      labelText: "Enter Your Notification To Send"),
                 ),
               ),
               SizedBox(

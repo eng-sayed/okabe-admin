@@ -17,6 +17,10 @@ import 'package:okpeadmin/users.dart';
 import 'package:okpeadmin/widgets.dart';
 import 'package:okpeadmin/youtube_webview.dart';
 
+import 'facebook.dart';
+import 'facebook.dart';
+import 'youtube_webview.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -68,7 +72,6 @@ class _MyHomePageState extends State<MyHomePage>
   StreamSubscription<ConnectivityResult> internetconnection;
   bool isoffline = true;
   final flutterWebviewPlugin = new FlutterWebviewPlugin();
-  Widget ui = Scaffold();
   TabController tabController;
   GlobalKey<ScaffoldState> scaffoldkey = GlobalKey<ScaffoldState>();
 
@@ -82,14 +85,13 @@ class _MyHomePageState extends State<MyHomePage>
         //there is no any connection
         setState(() {
           isoffline = true;
-          ui = nonet(context);
         });
       } else if (result == ConnectivityResult.wifi ||
           result == ConnectivityResult.mobile) {
         //connection is from wifi
         setState(() {
           isoffline = false;
-          ui = youtube();
+
         });
       }
     });
@@ -104,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage>
       key: scaffoldkey,
       floatingActionButton: FloatingActionButton(
         child: Icon(
-          Icons.mail,
+          Icons.notifications,
         ),
         onPressed: () {
           scaffoldkey.currentState.showBottomSheet((context) {
@@ -114,87 +116,31 @@ class _MyHomePageState extends State<MyHomePage>
       ),
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
+
         title: TabBar(
             controller: tabController,
-            padding: EdgeInsets.zero,
+           // padding: EdgeInsets.zero,
             tabs: [
-              Tab(text: "youtube"),
-              Tab(text: "facebook"),
-              Tab(text: "chat")
+              Tab(child:Text("Youtube" ,
+                style: TextStyle(color: Colors.black),)),
+              Tab(child:Text("Facebook" ,
+                style: TextStyle(color: Colors.black),)),
+              Tab(child:Text("Chats" ,
+                style: TextStyle(color: Colors.black),))
             ]),
       ),
-      body: Column(
+      body: TabBarView(
+        controller: tabController,
         children: [
-          Expanded(
-            child: TabBarView(
-              controller: tabController,
-              children: [
-                isoffline ? nonet(context) : chattest(),
-                isoffline ? nonet(context) : Container(color: Colors.white),
-                UsersList()
-              ],
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            height: 50,
-            color: Colors.blue,
-            child: Center(child: Text("حط الاعلان هنا")),
-          )
+          isoffline ? nonet(context) : WebViewExample(),
+          isoffline ? nonet(context) :
+          WebViewExample1(),
+          UsersList()
         ],
       ),
     );
-    // return Scaffold(
-    //   // appBar: AppBar(
-    //   //
-    //   // ),
-    //   drawer: Drawer(
-    //     // Add a ListView to the drawer. This ensures the user can scroll
-    //     // through the options in the drawer if there isn't enough vertical
-    //     // space to fit everything.
-    //     child: ListView(
-    //       // Important: Remove any padding from the ListView.
-    //       padding: EdgeInsets.zero,
-    //       children: [
-    //         const DrawerHeader(
-    //           decoration: BoxDecoration(
-    //             color: Colors.blue,
-    //           ),
-    //           child: Text('Drawer Header'),
-    //         ),
-    //         ListTile(
-    //           title: const Text('Item 1'),
-    //           onTap: () {
-    //             // Update the state of the app.
-    //             // ...
-    //           },
-    //         ),
-    //         ListTile(
-    //           title: const Text('Item 2'),
-    //           onTap: () {
-    //             // Update the state of the app.
-    //             // ...
-    //           },
-    //         ),
-    //       ],
-    //     ),
-    //   ),
-    //   body:Container(child: ui)
-    // );
   }
 }
 
 
- /*   Container(
-                child: Column(
-                  children: [
-                    TextField(
-                      onSubmitted: (s) {
-                        createUser(s, token);
-                      },
-                    ),
-                    TextField(
-                      onSubmitted: (s) {
-                        sendMessege(types.User(id: "admin"), s, token);
-                      },
-                    ), */
